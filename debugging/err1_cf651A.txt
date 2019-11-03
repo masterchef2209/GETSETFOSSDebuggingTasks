@@ -12,8 +12,8 @@ int main()
 	int t=0;
 	if(a<=2 && b<=2)
     {
-      cout<<t<<end;
-      continue;;
+      cout<<t<<endl;
+     
     }
 	while(a!=0 && b!=0)
 	{
