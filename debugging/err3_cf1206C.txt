@@ -43,7 +43,11 @@ int main()
 	vector<ll>arr(n+10);
 	for(ll i=1;i<=n;i++)
 	{
-		arr[i]=2*i-1;
+		ll x=2*i;
+		if(i<10)
+		 arr[n+i]=x;
+		else
+		arr.push_back(x);
 	}
 	for(ll i=1;i<=n;i++)
 	{
