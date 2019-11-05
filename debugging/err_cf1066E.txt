@@ -96,7 +96,7 @@ void deb(istream_iterator<string> it, T a, Args... args) {
     deb(++it, args...);
 }
  
-const int mod=993244353;
+const int mod=998244353;
 const int N=3e5+9;
 const ld eps=1e-9;
 const ld PI=acos(-1.0);
