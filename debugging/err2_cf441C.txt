@@ -30,7 +30,7 @@ double PI=3.1415926535897932384626;
  
 ll grid[310][310];
  
-vector< vector< pair<ll,ll> > >tubes(910);
+vector< vector< pair<ll,ll> > >tubes(96100);    //ie 310*310
  
 int main()
 {
