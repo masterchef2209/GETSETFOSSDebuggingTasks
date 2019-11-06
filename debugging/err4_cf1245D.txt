@@ -95,13 +95,13 @@ int main()
 	}
 	for(ll u=1;u<=n;u++)
 	{
-		cin>>k[n];
+		cin>>k[u];
 	}
 	for(ll u=1;u<=n;u++)
 	{
 		for(ll v=u+1;v<=n;v++)
 		{
-			ll dist=( (k[u]+k[v])*(abs(cities[u].fi-cities[v].se)+abs(cities[u].se-cities[v].se) ) );
+			ll dist=( (k[u]+k[v])*(abs(cities[u].fi-cities[v].fi)+abs(cities[u].se-cities[v].se) ) );
 			adj[u].eb(v,dist);
 			adj[v].eb(u,dist);
 		}
