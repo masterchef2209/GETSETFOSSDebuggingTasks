@@ -105,10 +105,6 @@ int main()
 			adj[u].eb(v,dist);
 			adj[v].eb(u,dist);
 		}
-
-			adj[u].eb(v,dist);
-			adj[v].eb(u,dist);
-		}
 	}
 	for(ll i=1;i<=n;i++)
 	{
