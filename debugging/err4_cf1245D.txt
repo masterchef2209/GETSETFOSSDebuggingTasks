@@ -95,13 +95,17 @@ int main()
 	}
 	for(ll u=1;u<=n;u++)
 	{
-		cin>>k[u];
+		cin>>k[u]; // now every city is being assigned the corresponding k value
 	}
 	for(ll u=1;u<=n;u++)
 	{
 		for(ll v=u+1;v<=n;v++)
 		{
-			ll dist=( (k[u]+k[v])*(abs(cities[u].fi-cities[v].fi)+abs(cities[u].se-cities[v].se) ) );
+			ll dist=( (k[u]+k[v])*(abs(cities[u].fi-cities[v].fi)+abs(cities[u].se-cities[v].se) ) ); // the abscissa of first city was being subtracted from the ordinate of second city which needed to be corrected
+			adj[u].eb(v,dist);
+			adj[v].eb(u,dist);
+		}
+
 			adj[u].eb(v,dist);
 			adj[v].eb(u,dist);
 		}
