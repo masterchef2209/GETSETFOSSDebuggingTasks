@@ -1,0 +1,52 @@
+/*
+    https://codeforces.com/contest/687/problem/C
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+
+#define SSIZE 502
+ 
+ll n,k;
+ll c[SSIZE];
+ 
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	ll dp[SSIZE][SSIZE][SSIZE];
+	cin>>n>>k;
+	for(ll i=1;i<=n;i++)
+	{
+		cin>>c[i];
+	}
+	dp[0][0][0]=1;
+	for(ll i=1;i<=n;i++)
+	{
+		for(ll j=0;j<=k;j++)
+		{
+			for(ll u=0;u<=k;u++)
+			{
+				dp[i][j][u]|=dp[i-1][j][u];
+				if( (j-c[i])>=0 )
+					dp[i][j][u]|=dp[i-1][j-c[i]][u];
+				if( (j-c[i])>=0 && (u-c[i])>=0 )
+					dp[i][j][u]|=dp[i-1][j-c[i]][u-c[i]];
+			}
+		}
+	}
+	vector<ll>ans;
+	for(ll sum=0;sum<=k;sum++)
+	{
+		if(!dp[n][k][sum])
+			ans.emplace_back(sum);
+	}
+	cout<<ans.size()<<"\n";
+	for(auto &x:ans)
+	{
+		cout<<x<<" ";
+	}
+    return 0;
+}
