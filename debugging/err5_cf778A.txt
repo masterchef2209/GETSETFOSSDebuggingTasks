@@ -3,6 +3,7 @@
 */
 
 #include <bits/stdc++.h> 
+using namespace std; // by this statement several functions like cin & cout can be called by using the standard namespace
 typedef long long ll;
  
 //ll ncr(ll n,ll r){ll ans=1;r=min(r,n-r);for (int i=1;i<=r;i++){ans*=(n-r+i);ans/=i;}return ans;}
@@ -61,7 +62,7 @@ int main()
 	}
 	while(lo<hi)
 	{
-		ll mid=lo+(hi-lo)/2;
+		ll mid=lo+(hi-lo)/2+1; // by incrementing the value of the variable 'mid' by 1 the value assigned to 'lo' will be one more than the actual mid value when the statement "lo=mid;" is executed
 		if(check(mid))
 		{
 			lo=mid;
