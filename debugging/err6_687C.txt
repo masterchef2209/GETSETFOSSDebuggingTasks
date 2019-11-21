@@ -5,13 +5,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef short int ll;
+typedef short int ll; // when we used the datatype "long long" or "int" memory limit exceeds so I used short int which is the shortest integer datatype
 
 #define SSIZE 502
  
 ll n,k;
 ll c[SSIZE];
-ll dp[SSIZE][SSIZE][SSIZE];
+ll dp[SSIZE][SSIZE][SSIZE]; // I moved this declaration outside the main function because earlier it was inside the main function where is goes on stack but that has a size limit of approx 8mb but the size of this array exceeds that so it should be declared as a global variable
  
 int main()
 {
@@ -40,7 +40,7 @@ int main()
 	vector<ll>ans;
 	for(ll sum=0;sum<=k;sum++)
 	{
-		if(dp[n][k][sum])
+		if(dp[n][k][sum]) // '!' was removed because because earlier it always stood true for those values which didn't satisfy our desired condition and false for those values that satisfied our condition
 			ans.emplace_back(sum);
 	}
 	cout<<ans.size()<<"\n";
