@@ -5,18 +5,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
+typedef short int ll;
 
 #define SSIZE 502
  
 ll n,k;
 ll c[SSIZE];
+ll dp[SSIZE][SSIZE][SSIZE];
  
 int main()
 {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	ll dp[SSIZE][SSIZE][SSIZE];
 	cin>>n>>k;
 	for(ll i=1;i<=n;i++)
 	{
@@ -40,7 +40,7 @@ int main()
 	vector<ll>ans;
 	for(ll sum=0;sum<=k;sum++)
 	{
-		if(!dp[n][k][sum])
+		if(dp[n][k][sum])
 			ans.emplace_back(sum);
 	}
 	cout<<ans.size()<<"\n";
